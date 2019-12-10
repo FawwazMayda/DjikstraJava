@@ -72,15 +72,15 @@ class Graph {
         int alt = a.distFromSource + this.getWeight(k,a);
         if (alt < a.distFromSource){
           a.distFromSource = alt;
-          a.prev = k
+          a.prev = k;
         }
       }
-      
     }
+    System.out.println("pendek");
   }
 
   public Node getMinDistFromSource(HashSet<Node> q){
-    Node k;
+    Node k=null;
     int min = Integer.MAX_VALUE;
     for(Node a : q){
       if(a.distFromSource < min){
@@ -107,14 +107,30 @@ class Graph {
 class Main {
   public static void main(String[] args) {
     System.out.println("Hello world!");
-    Graph g= new Graph()
+    Graph g= new Graph();
     Node A = new Node("A");
     Node B = new Node("B");
     Node C = new Node("C");
     Node D = new Node("D");
     Node E = new Node("E");
     Node F = new Node("F");
-
+    g.addNode(A);
+    g.addNode(B);
+    g.addNode(C);
+    g.addNode(D);
+    g.addNode(E);
+    g.addNode(F);
+    
+    g.connect(A,B,10);
+    g.connect(A,C,15);
+    g.connect(B,D,12);
+    g.connect(B,F,15);
+    g.connect(F,E,5);
+    g.connect(D,F,1);
+    g.connect(D,E,2);
+    g.connect(C,E,10);
+    g.shortestPath(A);
+    System.out.println("Ball world!");
 
   }
 }

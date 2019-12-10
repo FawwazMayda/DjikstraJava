@@ -4240,3 +4240,6 @@ Command-line arguments:  -data /home/runner
 
 !ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-10 01:42:34.797
 !MESSAGE >> document/hover
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-12-10 04:40:10.854
+!MESSAGE >> document/didChange
