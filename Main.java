@@ -17,8 +17,10 @@ class Edge{
 }
 
 class Node {
-  public distFromSource;
+  public int distFromSource;
+  public Node prev;
   public ArrayList<Node> neighbors = new ArrayList<>();
+
 
   public void addNeighbors(Node k){
     this.neighbors.add(k);
