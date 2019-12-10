@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 class Edge{
   public Node source,destination;
@@ -25,6 +26,7 @@ class Node {
   public void addNeighbors(Node k){
     this.neighbors.add(k);
   }
+
 }
 
 class Graph {
@@ -44,6 +46,48 @@ class Graph {
     s.addNeighbors(d);
     //Adding to EdgeList
     this.edges.add(k);
+  }
+
+  public void shortestPath(Node s){
+    HashSet<Node> unvisited = new HashSet<>();
+    for( Node v : this.nodes){
+      v.distFromSource=Integer.MAX_VALUE;
+      v.prev=null;
+      unvisited.add(v);
+    }
+    s.distFromSource = 0;
+    
+    while(unvisited.isEmpty()==false){
+      Node k = this.getMinDistFromSource(unvisited);
+      unvisited.remove(k);
+
+      for(Node a : k.neighbors){
+        int alt = 
+      }
+      
+    }
+  }
+
+  public Node getMinDistFromSource(HashSet<Node> q){
+    Node k;
+    int min = Integer.MAX_VALUE;
+    for(Node a : q){
+      if(a.distFromSource < min){
+        min = a.distFromSource;
+        k=a;
+      }
+    }
+    return k;
+  }
+
+  public int getWeight(Node source, Node destination){
+    for(Edge e : this.edges){
+      if(e.source==source && e.destination==destination){
+        return e.weight;
+
+      }
+    }
+    return 0;
   }
 
 }
