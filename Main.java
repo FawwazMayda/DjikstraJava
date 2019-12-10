@@ -26,7 +26,10 @@ class Node {
 }
 
 class Graph {
-  
+  Graph(){
+    
+  }
+
 }
 
 
