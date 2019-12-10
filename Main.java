@@ -8,7 +8,7 @@ class Edge{
   //If is undirected just add Double edge
   Edge(Node from,Node to, int length){
     this.source=from;
-    this.destination=t;
+    this.destination=to;
     this.weight=length;
   }
   @Override
@@ -41,6 +41,10 @@ class Graph {
 
   public void addNode(Node k){
     this.nodes.add(k);
+  }
+  public void connect(Node source, Node dest, int weight){
+    Edge e = new Edge(source,dest,weight);
+    this.addEdge(e);
   }
   public void addEdge(Edge k){
     Node s = k.source;
@@ -103,6 +107,14 @@ class Graph {
 class Main {
   public static void main(String[] args) {
     System.out.println("Hello world!");
-    //System.out.pri
+    Graph g= new Graph()
+    Node A = new Node("A");
+    Node B = new Node("B");
+    Node C = new Node("C");
+    Node D = new Node("D");
+    Node E = new Node("E");
+    Node F = new Node("F");
+
+
   }
 }
