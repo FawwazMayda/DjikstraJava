@@ -1,33 +1,47 @@
 import java.util.ArrayList;
 
 class Edge{
-  public int fromNode;
-  public int toNode;
-  public int length;
-
-  Edge(int from,int to, int length){
-    this.fromNode=from;
-    this.toNode = to;
-    this.length=length;
+  public Node source,destination;
+  public int weight;
+  //This Case is directed Graph
+  //If is undirected just add Double edge
+  Edge(Node from,Node to, int length){
+    this.source=from;
+    this.destination=t;
+    this.weight=length;
   }
-
-  public int getNeighbor(int v){
-    if(v==this.fromNode){
-      return this.fromNode;
-    }
-    return this.toNode;
+  @Override
+  public String toString() {
+    return source + " " + destination;
   }
 }
 
 class Node {
-  public boolean visited;
-  public int distFromSource=Integer.MAX_VALUE;
-  public ArrayList<Edge> edges = new ArrayList<>();
+  public distFromSource;
+  public ArrayList<Node> neighbors = new ArrayList<>();
+
+  public void addNeighbors(Node k){
+    this.neighbors.add(k);
+  }
 }
 
 class Graph {
+  public ArrayList<Node> nodes = new ArrayList<>();
+  public ArrayList<Edge> edges = new ArrayList<>();
+
   Graph(){
-    
+  }
+
+  public void addNode(Node k){
+    this.nodes.add(k);
+  }
+  public void addEdge(Edge k){
+    Node s = k.source;
+    Node d = k.destination;
+    //Adding to the neighbors List
+    s.addNeighbors(d);
+    //Adding to EdgeList
+    this.edges.add(k);
   }
 
 }
