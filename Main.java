@@ -19,10 +19,13 @@ class Edge{
 
 class Node {
   public int distFromSource;
+  public String label;
   public Node prev;
   public ArrayList<Node> neighbors = new ArrayList<>();
 
-
+  Node(String l){
+    this.label = l;
+  }
   public void addNeighbors(Node k){
     this.neighbors.add(k);
   }
