@@ -65,7 +65,11 @@ class Graph {
       unvisited.remove(k);
 
       for(Node a : k.neighbors){
-        int alt = 
+        int alt = a.distFromSource + this.getWeight(k,a);
+        if (alt < a.distFromSource){
+          a.distFromSource = alt;
+          a.prev = k
+        }
       }
       
     }
